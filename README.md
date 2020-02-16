@@ -1,5 +1,5 @@
-[Project documentation page](https://jtonic.github.io/tony_software_development_cookbook/)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[![Build Status](https://travis-ci.org/jtonic/js_ecosystem_for_the_impatient.svg?branch=master)](https://travis-ci.org/jtonic/js_ecosystem_for_the_impatient)
+[Project documentation page](https://jtonic.github.io/tony_software_development_cookbook/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![Build Status](https://travis-ci.org/jtonic/tony_software_development_cookbook.svg?branch=master)](https://travis-ci.org/jtonic/tony_software_development_cookbook)
 
 # Tony's software development cookbook
 
