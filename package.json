@@ -1,0 +1,25 @@
+{
+  "name": "tony_software_development_cookbook",
+  "version": "0.1.0",
+  "description": "This project comprises of a number of short software development recipes",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "reveal-md": "^3.0.4"
+  },
+  "scripts": {
+    "doc:serve": "gitbook install ./docs_src && gitbook serve ./docs_src",
+    "doc:build": "gitbook install ./docs_src && gitbook build ./docs_src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtonic/tony_software_development_cookbook.git"
+  },
+  "keywords": [],
+  "author": "antonel.pazargic@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtonic/tony_software_development_cookbook/issues"
+  },
+  "homepage": "https://github.com/jtonic/tony_software_development_cookbook#readme"
+}

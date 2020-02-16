@@ -1,0 +1,24 @@
+{
+    "title": "Tony's software development cookbook",
+    "plugins": [
+        "anchorjs",
+        "katex",
+        "block-align",
+        "flexible-alerts",
+        "creativecommons",
+        "fontsettings",
+        "smart-nav-collapse"
+    ],
+    "links": {
+        "sidebar": {
+            "Contact us / Support": "https://github.com/jtonic/tony_software_development_cookbook/issues"
+        }
+    },
+    "pluginsConfig": {
+        "fontsettings": {
+            "theme": "sepia",
+            "family": "sans",
+            "size": 2
+        }
+    }
+}
