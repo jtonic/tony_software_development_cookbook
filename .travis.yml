@@ -2,8 +2,10 @@ language: node_js
 node_js:
   - "8"
 
-install:
+before_install:
   - npm i -g npm@6.13.4
+
+install:
   - npm install
   - npm install gitbook-cli --save-dev
 
