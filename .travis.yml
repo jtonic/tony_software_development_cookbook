@@ -3,7 +3,7 @@ node_js:
   - "8"
 
 cache:
-  npm: true
+  npm: false
 
 before_install:
   - npm i -g npm@6.13.4
