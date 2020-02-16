@@ -1,4 +1,4 @@
-# Code coverage with the “ignorant” jacoco
+# Recipe 1: Code coverage with the “ignorant” jacoco
 
 
 ## Description

@@ -1,5 +1,6 @@
 # Summary
 
 - [Introduction](README.md)
-- [Code quality](code_quality.md)
-    - [The ignorant jacoco](the_ignorant_jacoco.md)
+- [Table of contents](table_of_contents.md)
+- Code quality
+    - [Recipe 1: The ignorant jacoco](the_ignorant_jacoco.md)

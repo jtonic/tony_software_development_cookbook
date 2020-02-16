@@ -2,20 +2,21 @@
 
 ---
 
-## Description
+##Context
+
 Without a doubt software development requires the usage of a large amount of knowledge about:
-- various programming languages, say java, kotlin, js, golang, etc
-- project management/dependencies tools, such as maven, npm, gradle, pip
+- various programming languages (java, kotlin, js, golang...)
+- project management/dependencies tools such as maven, npm, gradle, pip
 - CI/CD tools (Jenkins, Travis)
-- Integrated Development Environment (IDE), i.e. IntelliJ Idea, Visual Studio Code,
+- Integrated Development Environment (IDE), i.e. IntelliJ Idea, Visual Studio Code
 - DevOps (Ansible, Vagrant, VMs, linux)
-- Security (password vaults, certificates)
+- Security (password vault, certificates)
 - Software quality
-    - test libraries
-    - code quality and code conventions, say Findbugs, Jacoco, PMD, Sonar Cube, etc...
-- and a LOT more
+    - test libraries (junit, testng, spock)
+    - code quality and code conventions (Findbugs, Jacoco, PMD, SonarQube...)
+- and a LOT LOT more
 
 ##Intention
 
-This book is gonna be fill in with a series of recipes, I came across down the software development road, which I hope will be of help for me and other engineers.
-
+This book is gonna be fill in with a series of recipes I'm coming across down the software development road.
+I hope will be of help for other engineers as they are for me.
