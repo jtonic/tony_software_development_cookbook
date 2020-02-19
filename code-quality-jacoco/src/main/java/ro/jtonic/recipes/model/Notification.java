@@ -3,6 +3,7 @@ package ro.jtonic.recipes.model;
 import java.util.StringJoiner;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.Generated;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,6 +21,7 @@ public class Notification {
   private String type;
 
   @Override
+  @Generated
   public String toString() {
     return new StringJoiner(", ", Notification.class.getSimpleName() + "[", "]")
         .add("id='" + id + "'")
