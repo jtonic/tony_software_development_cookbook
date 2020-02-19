@@ -1,17 +1,16 @@
 package ro.jtonic.recipes.model;
 
+import java.util.StringJoiner;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @EqualsAndHashCode
 public class Notification {
 
@@ -19,4 +18,14 @@ public class Notification {
   private String message;
   private String recipient;
   private String type;
+
+  @Override
+  public String toString() {
+    return new StringJoiner(", ", Notification.class.getSimpleName() + "[", "]")
+        .add("id='" + id + "'")
+        .add("message='" + message + "'")
+        .add("recipient='" + recipient + "'")
+        .add("type='" + type + "'")
+        .toString();
+  }
 }
