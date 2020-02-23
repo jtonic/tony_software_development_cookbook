@@ -1,26 +1,44 @@
 package ro.jtonic.handson.kotlin.concurrency
 
 import io.kotlintest.matchers.doubles.shouldBeGreaterThan
-import io.kotlintest.matchers.string.shouldHaveLength
+import io.kotlintest.matchers.doubles.shouldBeLessThan
 import io.kotlintest.specs.StringSpec
+import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
-import kotlin.time.DurationUnit.SECONDS
+import ro.jtonic.handson.kotlin.concurrency.UserManagement.getAge
+import ro.jtonic.handson.kotlin.concurrency.UserManagement.getName
+import java.util.concurrent.TimeUnit.SECONDS
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
 @ExperimentalTime
-class SimpleSpec : StringSpec({
+class SimpleSpec : StringSpec() {
 
-    "suspendable computation runs sequentially by default" {
+  init {
+
+    "coroutines are better tested with kotlintest" {
       val latency = measureTime {
-        // runBlocking executes code inside the block sequentialy in the current thread
-        runBlocking {
-          println("Thread.currentThread() = ${Thread.currentThread()}")
-          delay(SECONDS.toMillis(2))
-          "hello" shouldHaveLength 5
-        }
+        println("Thread.currentThread() = ${Thread.currentThread()}")
+        delay(SECONDS.toMillis(1))
       }
-      latency.inSeconds shouldBeGreaterThan 2L.toDouble()
+      latency.inSeconds shouldBeGreaterThan 1L.toDouble()
     }
-})
+
+    "should take a bit more that 2 seconds to get user name and age" {
+      println("Test execution thread = ${Thread.currentThread()}")
+      val latency = measureTime {
+        // --> async/await
+        val name = async { getName() }
+        val age = async { getAge() }
+        val result = "Name: ${name.await()}, age: ${age.await()}"
+        // ---
+        println("result = $result")
+      }
+
+      val latencyInSecs = latency.inSeconds
+      println("latencyInSecs = $latencyInSecs")
+      latencyInSecs shouldBeLessThan 2.1
+    }
+  }
+}
+
