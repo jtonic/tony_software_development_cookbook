@@ -14,7 +14,9 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.slf4j:slf4j-simple:$slf4jVersion")
-    testImplementation("io.kotlintest:kotlintest-runner-junit5:$kotestVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion")
+
+    testImplementation("io.kotlintest:kotlintest-runner-junit5:$kotlinTestVersion")
 }
 
 application {
