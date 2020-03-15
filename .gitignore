@@ -62,10 +62,6 @@ thumbs.db
 # exclude .tmp folder
 .tmp
 
-# User-specific stuff
-.idea
-!.idea/runConfigurations/*
-
 # File-based project format
 *.iws
 *.iml
@@ -82,3 +78,7 @@ out/
 # Gradle
 
 .gradle/
+
+# User-specific stuff
+.idea/
+!.idea/runConfigurations/*
