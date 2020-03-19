@@ -1,0 +1,5 @@
+const val akkaVersion = "2.6.4"
+const val scalaVersion = "2.12"
+const val slf4jVersion = "1.7.26"
+const val junitVersion = "4.12"
+const val logbackVersion = "1.2.3"
