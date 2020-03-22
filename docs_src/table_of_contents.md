@@ -1,6 +1,6 @@
 # Table of contents
 
 1. Code quality
-    1. [Recipe 1: The ignorant jacoco](the_ignorant_jacoco.md)
+   - [Recipe 1: The ignorant jacoco](the_ignorant_jacoco.md)
 1. IntelliJ Idea
-    1. [Recipe 1: Code format using IntelliJ Idea and .editorconfig](idea_code_format_with_editorconfig.md)
+   - [Recipe 1: Code format using IntelliJ Idea and .editorconfig](idea_code_format_with_editorconfig.md)
