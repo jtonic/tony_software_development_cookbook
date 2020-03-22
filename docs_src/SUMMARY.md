@@ -3,7 +3,7 @@
 ---
 
 - [Introduction](README.md)
-- [Table of contents](_table_of_contents.md)
+- [Table of contents](toc.md)
 - Code quality
     - [Recipe 1: Code coverage with the “ignorant” jacoco](the_ignorant_jacoco.md)
 - IntelliJ Idea
