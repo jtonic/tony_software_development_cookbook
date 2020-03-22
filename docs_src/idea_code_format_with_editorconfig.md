@@ -1,4 +1,4 @@
-# Recipe 1: Format code using IntelliJ Idea and .editorconfig
+# Recipe 1: Code format using IntelliJ Idea and .editorconfig
 
 ## Description
 
