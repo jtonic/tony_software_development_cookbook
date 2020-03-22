@@ -62,9 +62,9 @@ Jacoco maven plugin is configured as per below.
 ## Benefits
 
 <span style='color:magenta'>__Code simplification with lombok__
-1. less (both production and test) code
-1. more maintainable code (because of 1.)
-1. keep or improve the code coverage but with not a single additional line of unit tests.
+1. less (both production and test) code,
+1. more maintainable code,
+1. keep or improve the code coverage without a single additional line of unit tests.
 
 ## Steps
 
