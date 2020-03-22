@@ -1,5 +1,7 @@
 # Recipe: short description
 
+---
+
 ## Description
 
 Description of the recipes

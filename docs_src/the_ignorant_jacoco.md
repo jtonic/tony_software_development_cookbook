@@ -1,5 +1,7 @@
 # Recipe 1: Code coverage with the “ignorant” jacoco
 
+---
+
 ## Description
 
 Jacoco code coverage tool for java application definitely has to be included (through Jenkins and SonarQube) in the CI/CD pipeline of every production projects.

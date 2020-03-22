@@ -1,5 +1,7 @@
 # Recipe 1: Code format using IntelliJ Idea and .editorconfig
 
+---
+
 ## Description
 
   It is always important to comply with the best practices and code styles.
