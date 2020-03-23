@@ -23,6 +23,5 @@ configure<JavaPluginConvention> {
 }
 
 application {
-
   mainClassName = "ro.jtonic.handson.akka.SimpleActorApp"
 }
