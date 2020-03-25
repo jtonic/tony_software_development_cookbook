@@ -1,6 +1,7 @@
 package ro.jtonic.handson.tests;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.powermock.api.mockito.PowerMockito.mock;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
 import static org.powermock.api.mockito.PowerMockito.when;
 
@@ -15,33 +16,33 @@ import org.powermock.modules.junit4.PowerMockRunner;
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({TargetClass.class, StaticClass.class})
 public class UsingPowerMockTest {
-    
-    @Test
-    public void should_mock_static_method() {
-        final String value = UUID.randomUUID().toString();
-        
-        mockStatic(StaticClass.class);
-        when(StaticClass.ask()).thenReturn(value);
 
-        assertThat(StaticClass.ask())
-            .as("Static method is mocked")
-            .isEqualTo(value);
-    }
+  @Test
+  public void should_mock_static_method() {
+    final String value = UUID.randomUUID().toString();
 
-    @Test
-    public void should_mock_constructor() throws Exception {
+    mockStatic(StaticClass.class);
+    when(StaticClass.speak()).thenReturn(value);
 
-      CollaboratorClass collaboratorClass = PowerMockito.mock(CollaboratorClass.class);
+    assertThat(StaticClass.speak())
+        .as("Static method is mocked")
+        .isEqualTo(value);
+  }
 
-      Mockito.doReturn("boo").when(collaboratorClass).foo();
-      PowerMockito.whenNew(CollaboratorClass.class).withNoArguments()
-          .thenReturn(collaboratorClass);
+  @Test
+  public void should_mock_constructor() throws Exception {
 
-      final TargetClass sut = new TargetClass();
-      sut.foo();
+    CollaboratorClass collaboratorClass = PowerMockito.mock(CollaboratorClass.class);
 
+    Mockito.doReturn("boo").when(collaboratorClass).foo();
+    PowerMockito.whenNew(CollaboratorClass.class).withNoArguments()
+        .thenReturn(collaboratorClass);
 
-      PowerMockito.verifyNew(CollaboratorClass.class).withNoArguments();
-      Mockito.verify(collaboratorClass).foo();
-    }
+    final TargetClass sut = new TargetClass(mock(FinalMethodClass.class), mock(FinalClass.class),
+        mock(PrivateMethodClass.class));
+    sut.foo();
+
+    PowerMockito.verifyNew(CollaboratorClass.class).withNoArguments();
+    Mockito.verify(collaboratorClass).foo();
+  }
 }

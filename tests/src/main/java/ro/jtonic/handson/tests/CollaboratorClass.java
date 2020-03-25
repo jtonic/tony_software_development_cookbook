@@ -8,6 +8,6 @@ public class CollaboratorClass {
 
   public String foo() {
     System.out.println("Calling collaborator");
-    return "foo";
+    return "original foo";
   }
 }

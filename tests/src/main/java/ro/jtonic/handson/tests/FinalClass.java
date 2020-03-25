@@ -4,11 +4,11 @@ public final class FinalClass {
     
     public String ask(){
         System.out.println("final class, normal method");
-        return "I'm Final class!!!";
+        return "I'm Final class!!! Original ask.";
     }
     
     public final String say(){
         System.out.println("final class, final method");
-        return "I am final method!!!!";
+        return "I am final method!!!! Original final say.";
     }
 }
