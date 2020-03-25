@@ -19,7 +19,7 @@ public class OnlyMockitoTest {
 
     FinalClass finalClass = Mockito.mock(FinalClass.class);
 
-    doReturn(boo).when(finalClass.ask());
+    doReturn(boo).when(finalClass).ask();
 
     final String ret = finalClass.ask();
 

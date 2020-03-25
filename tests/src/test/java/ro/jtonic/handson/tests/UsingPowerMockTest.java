@@ -7,11 +7,13 @@ import static org.powermock.api.mockito.PowerMockito.when;
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest(StaticClass.class)
+@PrepareForTest({TargetClass.class, StaticClass.class})
 public class UsingPowerMockTest {
     
     @Test
@@ -24,5 +26,22 @@ public class UsingPowerMockTest {
         assertThat(StaticClass.ask())
             .as("Static method is mocked")
             .isEqualTo(value);
+    }
+
+    @Test
+    public void should_mock_constructor() throws Exception {
+
+      CollaboratorClass collaboratorClass = PowerMockito.mock(CollaboratorClass.class);
+
+      Mockito.doReturn("boo").when(collaboratorClass).foo();
+      PowerMockito.whenNew(CollaboratorClass.class).withNoArguments()
+          .thenReturn(collaboratorClass);
+
+      final TargetClass sut = new TargetClass();
+      sut.foo();
+
+
+      PowerMockito.verifyNew(CollaboratorClass.class).withNoArguments();
+      Mockito.verify(collaboratorClass).foo();
     }
 }
