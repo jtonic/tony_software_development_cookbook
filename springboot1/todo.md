@@ -1,7 +1,9 @@
 # TODO list
 
 - Actors
-    1. [ ] -> in spring RestController use ask instead of tell and return from endpoint method CompletableFuture
+    1. [x] use ask instead of tell in spring RestController 
+    1. [ ] Patterns.ask() with generified CompletableFuture
+    1. [ ] spring web 1.x and CompletableFuture as return type from rest-controller method  
     1. [ ] Create an actor from another actor
     1. [ ] Actor sends a message to itself
     1. [ ] Parent actor send kill a child
