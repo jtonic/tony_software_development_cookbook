@@ -13,9 +13,11 @@ repositories {
 
 dependencies {
 
-  implementation("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+  implementation("org.springframework.boot:spring-boot-starter-web")
   implementation("com.typesafe.akka:akka-actor_$scalaVersion:$akkaVersion")
   implementation("ch.qos.logback:logback-classic:$logbackVersion")
+  implementation("com.typesafe:config:$typesafeConfigVersion")
+  implementation("org.springframework.boot:spring-boot-starter-actuator")
 
   compileOnly("org.projectlombok:lombok:$lombokVersion")
   annotationProcessor("org.projectlombok:lombok:$lombokVersion")
