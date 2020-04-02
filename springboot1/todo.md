@@ -15,3 +15,20 @@
     
 - Spring boot/core/web
     1. [ ] Use @Lookup, and the other options for dynamic bean creations.
+    
+- The typesafe configuration (hocon format) as spring property source
+
+    1. [x] PropertySource implementation for typesafe config
+    1. [x] Config values by spring Environment.getProperty("my_property")
+    1. [x] Config values by spring @Value
+    1. [x] Works correctly in tests (env, @Value)
+    1. [x] Config values can be overridden in @SpringBootTest#properties
+    1. [ ] Test typesafe features [doc](https://github.com/lightbend/config):
+        - comments
+        - includes
+        - substitutions ("foo" : ${bar}, "foo" : Hello ${who})
+        - properties-like notation (a.b=c)
+        - substitute environment variables (logdir=${HOME}/logs) - ${?FORCED_BASEDIR}
+    1. [ ] Integration with spring profiles...
+    1. [ ] Validation of properties value... Is this necessarily?
+    1. [ ] SpEL
