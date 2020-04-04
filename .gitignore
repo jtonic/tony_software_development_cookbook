@@ -80,5 +80,5 @@ out/
 .gradle/
 
 # User-specific stuff
-.idea/
-!.idea/runConfigurations/*
+.idea/*
+!.idea/runConfigurations/*.xml
