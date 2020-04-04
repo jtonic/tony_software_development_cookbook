@@ -36,6 +36,7 @@ dependencies {
   testImplementation("org.junit.jupiter:junit-jupiter")
   testImplementation("io.micronaut.test:micronaut-test-junit5")
   testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
+  testImplementation("org.assertj:assertj-core:$assertjVersion")
 
   kaptTest(platform("io.micronaut:micronaut-bom:$micronautVersion"))
   kaptTest("io.micronaut:micronaut-inject-java")
