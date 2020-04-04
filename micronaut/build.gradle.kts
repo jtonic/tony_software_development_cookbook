@@ -1,75 +1,50 @@
-plugins {
-  java
-  application
-  kotlin("jvm") version kotlinVersion
-  kotlin("kapt") version kotlinVersion
-  kotlin("plugin.allopen") version kotlinVersion
-}
-
 group = "ro.jtonic.handson"
 version = "1.0-SNAPSHOT"
 
-repositories {
-  mavenCentral()
+plugins {
+  java apply true
+  application apply true
+  kotlin("jvm") version kotlinVersion apply false
+  kotlin("kapt") version kotlinVersion apply false
+  kotlin("plugin.allopen") version kotlinVersion apply false
 }
 
-dependencies {
+subprojects {
 
-  implementation(platform("io.micronaut:micronaut-bom:$micronautVersion"))
+  apply {
+    plugin("java")
+    plugin("application")
+  }
 
-  implementation(kotlin("stdlib-jdk8"))
-  implementation(kotlin("reflect"))
-  implementation("io.micronaut:micronaut-runtime")
-  implementation("io.micronaut:micronaut-http-server-netty")
-  implementation("io.micronaut:micronaut-http-client")
+  repositories {
+    mavenCentral()
+  }
 
-  kapt(platform("io.micronaut:micronaut-bom:$micronautVersion"))
-  kapt("io.micronaut:micronaut-inject-java")
-  kapt("io.micronaut:micronaut-validation")
-  kapt("io.micronaut.configuration:micronaut-openapi")
+  dependencies {
 
-  runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonKtModuleVersion")
-  runtimeOnly("ch.qos.logback:logback-classic:$logbackVersion")
+    implementation(platform("io.micronaut:micronaut-bom:$micronautVersion"))
+    implementation("io.micronaut:micronaut-runtime")
+    implementation("io.micronaut:micronaut-http-server-netty")
+    implementation("io.micronaut:micronaut-http-client")
 
-  testImplementation(platform("org.junit:junit-bom:$junitVersion"))
+    runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonKtModuleVersion")
+    runtimeOnly("ch.qos.logback:logback-classic:$logbackVersion")
 
-  testImplementation("org.junit.jupiter:junit-jupiter")
-  testImplementation("io.micronaut.test:micronaut-test-junit5")
-  testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
-  testImplementation("org.assertj:assertj-core:$assertjVersion")
+    testImplementation(platform("org.junit:junit-bom:$junitVersion"))
 
-  kaptTest(platform("io.micronaut:micronaut-bom:$micronautVersion"))
-  kaptTest("io.micronaut:micronaut-inject-java")
-}
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("io.micronaut.test:micronaut-test-junit5")
+    testImplementation("org.mockito:mockito-junit-jupiter:$mockitoVersion")
+    testImplementation("org.assertj:assertj-core:$assertjVersion")
+  }
 
-configure<JavaPluginConvention> {
-  sourceCompatibility = JavaVersion.VERSION_1_8
-}
+  tasks {
 
-tasks {
-  compileKotlin {
-    kotlinOptions {
-      jvmTarget = jvmVersion
-      javaParameters = true
+    java {
+      sourceCompatibility = JavaVersion.VERSION_1_8
+    }
+    test {
+      useJUnitPlatform()
     }
   }
-  compileTestKotlin {
-    kotlinOptions {
-      jvmTarget = jvmVersion
-      javaParameters = true
-    }
-  }
-
-  test {
-    useJUnitPlatform()
-  }
-}
-
-application {
-  mainClassName = "ro.jtonic.handson.micronaut.App"
-}
-
-allOpen {
-
-  annotation("io.micronaut.aop.Around")
 }
