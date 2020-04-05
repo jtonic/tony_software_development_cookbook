@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="springboot1 [bootRun]" type="GradleRunConfiguration" factoryName="Gradle">
+  <configuration default="false" name="springboot1 [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" folderName="springboot1">
     <ExternalSystemSettings>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$/springboot1" />

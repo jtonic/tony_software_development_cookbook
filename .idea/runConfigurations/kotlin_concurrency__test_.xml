@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="kotlin-concurrency [test]" type="GradleRunConfiguration" factoryName="Gradle">
+  <configuration default="false" name="kotlin-concurrency [test]" type="GradleRunConfiguration" factoryName="Gradle" folderName="kotlin-concurrency">
     <ExternalSystemSettings>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$/kotlin-concurrency" />
