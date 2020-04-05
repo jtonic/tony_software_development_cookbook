@@ -6,6 +6,7 @@ plugins {
   kotlin("jvm") apply true
   kotlin("kapt") apply true
   kotlin("plugin.allopen") apply true
+  id("com.github.johnrengelman.shadow") version shadowJarVersion
 }
 
 dependencies {
@@ -22,6 +23,8 @@ dependencies {
   kaptTest("io.micronaut:micronaut-inject-java")
 }
 
+val mainClass =  "ro.jtonic.handson.micronaut.kt.cli.CliApp"
+
 tasks {
   compileKotlin {
     kotlinOptions {
@@ -35,14 +38,18 @@ tasks {
       javaParameters = true
     }
   }
-
   test {
     useJUnitPlatform()
+  }
+  jar {
+    manifest {
+      attributes["Main-Class"] = mainClass
+    }
   }
 }
 
 application {
-  mainClassName = "ro.jtonic.handson.micronaut.kt.cli.CliApp"
+  mainClassName = mainClass
 }
 
 allOpen {
