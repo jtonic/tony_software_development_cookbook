@@ -27,6 +27,15 @@ subprojects {
     implementation("io.micronaut:micronaut-http-server-netty")
     implementation("io.micronaut:micronaut-http-client")
 
+    val isFileWatched: Boolean = project.hasProperty("fileWatch")
+    // logger.quiet("[${project.name}] isFileWatched = $isFileWatched")
+
+    if (isFileWatched) {
+      implementation("io.micronaut:micronaut-runtime-osx")
+      implementation("net.java.dev.jna:jna")
+      implementation("io.methvin:directory-watcher")
+    }
+
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonKtModuleVersion")
     runtimeOnly("ch.qos.logback:logback-classic:$logbackVersion")
 

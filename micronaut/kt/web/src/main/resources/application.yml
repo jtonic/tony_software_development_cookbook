@@ -1,0 +1,7 @@
+micronaut:
+  io:
+    watch:
+      paths: src/main
+      restart: true
+  server:
+    port: 8080
