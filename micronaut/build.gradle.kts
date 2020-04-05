@@ -20,21 +20,20 @@ subprojects {
     mavenCentral()
   }
 
+  fun Project.getDevelopmentOnlyConfiguration(): Configuration {
+    return configurations.findByName("developmentOnly") ?: configurations.create("developmentOnly") {
+      dependencies.add(project.dependencies.implementation("io.micronaut:micronaut-runtime-osx"))
+      dependencies.add(project.dependencies.implementation("net.java.dev.jna:jna"))
+      dependencies.add(project.dependencies.implementation("io.micronaut:micronaut-http-client"))
+    }
+  }
+
   dependencies {
 
     implementation(platform("io.micronaut:micronaut-bom:$micronautVersion"))
     implementation("io.micronaut:micronaut-runtime")
     implementation("io.micronaut:micronaut-http-server-netty")
     implementation("io.micronaut:micronaut-http-client")
-
-    val isFileWatched: Boolean = project.hasProperty("fileWatch")
-    // logger.quiet("[${project.name}] isFileWatched = $isFileWatched")
-
-    if (isFileWatched) {
-      implementation("io.micronaut:micronaut-runtime-osx")
-      implementation("net.java.dev.jna:jna")
-      implementation("io.methvin:directory-watcher")
-    }
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonKtModuleVersion")
     runtimeOnly("ch.qos.logback:logback-classic:$logbackVersion")
@@ -49,10 +48,15 @@ subprojects {
 
   tasks {
 
+    withType<JavaExec> {
+      classpath = getDevelopmentOnlyConfiguration()
+    }
     java {
       sourceCompatibility = JavaVersion.VERSION_1_8
     }
     test {
+      // the error `Could not find io.micronaut:micronaut-runtime-osx:.` occurs when uncomment the following
+      // classpath = getDevelopmentOnlyConfiguration()
       useJUnitPlatform()
     }
   }
