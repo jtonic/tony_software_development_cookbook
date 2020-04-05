@@ -7,5 +7,9 @@
     - [x] Controller
     - [x] Client
     - [x] junit 5 test
-- [ ] Simple no-web example
+- [x] Run/Debug application in watch mode for a better local dev experience
+- [x] Simple no-web example
+
+- [ ] For presentations
+    - [ ] tbd
 
