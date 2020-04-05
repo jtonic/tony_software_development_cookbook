@@ -2,6 +2,7 @@ group = "ro.jtonic.handson.kt"
 version = "1.0-SNAPSHOT"
 
 plugins {
+  application apply true
   kotlin("jvm") apply true
   kotlin("kapt") apply true
   kotlin("plugin.allopen") apply true

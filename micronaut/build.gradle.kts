@@ -1,9 +1,10 @@
+// https://guides.gradle.org/migrating-build-logic-from-groovy-to-kotlin/
+
 group = "ro.jtonic.handson"
 version = "1.0-SNAPSHOT"
 
 plugins {
   java apply true
-  application apply true
   kotlin("jvm") version kotlinVersion apply false
   kotlin("kapt") version kotlinVersion apply false
   kotlin("plugin.allopen") version kotlinVersion apply false
@@ -13,7 +14,6 @@ subprojects {
 
   apply {
     plugin("java")
-    plugin("application")
   }
 
   repositories {
