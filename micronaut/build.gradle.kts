@@ -50,10 +50,20 @@ subprojects {
 
     withType<JavaExec> {
       classpath = getDevelopmentOnlyConfiguration()
+      jvmArgs = listOf("-noverify", "-XX:TieredStopAtLevel=1", "-Dcom.sun.management.jmxremote")
     }
+
+    withType<JavaCompile> {
+      with(options) {
+        encoding = "UTF-8"
+        compilerArgs.add("-parameters")
+      }
+    }
+
     java {
       sourceCompatibility = JavaVersion.VERSION_1_8
     }
+
     test {
       // the error `Could not find io.micronaut:micronaut-runtime-osx:.` occurs when uncomment the following
       // classpath = getDevelopmentOnlyConfiguration()
