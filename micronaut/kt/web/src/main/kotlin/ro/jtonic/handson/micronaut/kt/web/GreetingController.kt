@@ -5,6 +5,7 @@ import io.micronaut.http.annotation.Get
 @Controller("/")
 class GreetingController(private val greetingService: GreetingService) {
 
-  @Get("/hello/{name}")
-  fun hello(name: String) = greetingService.greet(name)
+  @Get("/greeting/{name}")
+  fun greet(name: String) =
+    greetingService.greet(name)
 }
