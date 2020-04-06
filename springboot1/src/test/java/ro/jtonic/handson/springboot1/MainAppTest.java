@@ -37,5 +37,8 @@ public class MainAppTest {
     assertEquals("My application", this.applicationDescription);
     assertEquals("8081", this.applicationPort);
     assertEquals("8081", this.env.getProperty("application.port", "9090"));
+
+    assertEquals("8081", this.env.getProperty("port", "9090"));
+    assertEquals("8081", this.env.getProperty("application.httpPort", "9090"));
   }
 }

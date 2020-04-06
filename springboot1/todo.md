@@ -26,7 +26,7 @@
     1. [ ] Test typesafe features [doc](https://github.com/lightbend/config):
         - [X] comments
         - [x] includes
-        - [ ] substitutions ("foo" : ${bar}, "foo" : Hello ${who})
+        - [x] substitutions ("foo" : ${bar}, "foo" : Hello ${who})
         - [x] properties-like notation (a.b=c)
         - [ ] substitute environment variables (logdir=${HOME}/logs) - ${?FORCED_BASEDIR}
     1. [ ] Integration with spring profiles...
