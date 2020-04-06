@@ -13,6 +13,7 @@ public class DataFromTypeSafeConfigResource {
 
   private final String applicationName;
   private final String applicationDescription;
+  private final Environment env;
 
   public DataFromTypeSafeConfigResource(
       @Value("${application.name}") String applicationName,
@@ -20,6 +21,7 @@ public class DataFromTypeSafeConfigResource {
 
     this.applicationName = applicationName;
     this.applicationDescription = env.getProperty("application.description", "No description");
+    this.env = env;
   }
 
   @SneakyThrows
@@ -28,8 +30,8 @@ public class DataFromTypeSafeConfigResource {
   public String greeting() {
 
     final String message = String
-        .format("[Application] name: %s, description %s", this.applicationName,
-            this.applicationDescription);
+        .format("Application\n\tname: %s, \n\tdescription: %s, \n\tport: %s", this.applicationName,
+            this.applicationDescription, this.env.getProperty("server.port", "9091"));
     return message;
   }
 }
