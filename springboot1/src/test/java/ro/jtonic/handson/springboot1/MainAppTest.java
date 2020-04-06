@@ -28,6 +28,9 @@ public class MainAppTest {
   @Value("${application.port:9090}")
   public String applicationPort;
 
+  @Value("${userName:NoOne}")
+  public String userName;
+
   @Autowired
   public Environment env;
 
@@ -40,5 +43,7 @@ public class MainAppTest {
 
     assertEquals("8081", this.env.getProperty("port", "9090"));
     assertEquals("8081", this.env.getProperty("application.httpPort", "9090"));
+
+    assertEquals("antonelpazargic", this.userName);
   }
 }

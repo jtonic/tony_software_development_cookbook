@@ -28,7 +28,7 @@
         - [x] includes
         - [x] substitutions ("foo" : ${bar}, "foo" : Hello ${who})
         - [x] properties-like notation (a.b=c)
-        - [ ] substitute environment variables (logdir=${HOME}/logs) - ${?FORCED_BASEDIR}
+        - [x] substitute environment variables and overridden (logdir=${HOME}/logs) - ${?FORCED_BASEDIR}
     1. [ ] Integration with spring profiles...
     1. [ ] Validation of properties value... Is this necessarily?
     1. [ ] SpEL
