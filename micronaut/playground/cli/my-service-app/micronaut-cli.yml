@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: ro.jtonic.handson.micronaut.cli.generated
+---
+testFramework: junit
+sourceLanguage: java
