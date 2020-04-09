@@ -13,16 +13,8 @@ repositories {
     maven { setUrl("https://jcenter.bintray.com") }
 }
 
-//fun Project.getDevelopmentOnlyConfiguration(): Configuration {
-//    return configurations.findByName("developmentOnly")
-//        ?: configurations.create("developmentOnly") {
-//            dependencies.add(project.dependencies.implementation("io.micronaut:micronaut-runtime-osx"))
-//            dependencies.add(project.dependencies.implementation("net.java.dev.jna:jna"))
-//            dependencies.add(project.dependencies.implementation("io.micronaut:micronaut-http-client"))
-//        }
-//}
-
-val developmentOnly by configurations.creating
+// Warn: This configuration has poor `file watch` performance on macOS
+val developmentOnly: Configuration by configurations.creating
 
 dependencies {
     annotationProcessor(platform("io.micronaut:micronaut-bom:$micronautVersion"))
@@ -45,7 +37,6 @@ dependencies {
 }
 
 val mainClass = "ro.jtonic.handson.micronaut.cli.generated.Application"
-// use JUnit 5 platform
 
 tasks {
 
@@ -60,8 +51,8 @@ tasks {
         }
     }
     test {
-        // the error `Could not find io.micronaut:micronaut-runtime-osx:.` occurs when uncomment the following
         classpath += developmentOnly
+        // use JUnit 5 platform
         useJUnitPlatform()
     }
     shadowJar {
