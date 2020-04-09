@@ -2,7 +2,6 @@ package ro.jtonic.handson.micronaut.cli.generated;
 
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import io.micronaut.http.HttpStatus;
 
 @Controller("/person")
 public class PersonController {
@@ -13,7 +12,7 @@ public class PersonController {
     this.personService = personService;
   }
 
-  @Get("/fathername")
+  @Get(produces = "text/plain")
   public String index() {
     return this.personService.getFatherName();
   }
