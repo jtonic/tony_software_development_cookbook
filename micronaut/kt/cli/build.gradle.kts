@@ -16,8 +16,6 @@ dependencies {
 
   kapt(platform("io.micronaut:micronaut-bom:$micronautVersion"))
   kapt("io.micronaut:micronaut-inject-java")
-  kapt("io.micronaut:micronaut-validation")
-  kapt("io.micronaut.configuration:micronaut-openapi")
 
   kaptTest(platform("io.micronaut:micronaut-bom:$micronautVersion"))
   kaptTest("io.micronaut:micronaut-inject-java")
@@ -46,12 +44,10 @@ tasks {
       attributes["Main-Class"] = mainClass
     }
   }
-}
-
-application {
-  mainClassName = mainClass
-}
-
-allOpen {
-  annotation("io.micronaut.aop.Around")
+  application {
+    mainClassName = mainClass
+  }
+  allOpen {
+    annotation("io.micronaut.aop.Around")
+  }
 }

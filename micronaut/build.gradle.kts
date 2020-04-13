@@ -50,7 +50,10 @@ subprojects {
 
     withType<JavaExec> {
       classpath = getDevelopmentOnlyConfiguration()
-      jvmArgs = listOf("-noverify", "-XX:TieredStopAtLevel=1", "-Dcom.sun.management.jmxremote")
+
+      val jvmArgsList = mutableSetOf("-noverify") as LinkedHashSet
+      jvmArgsList += listOf("-XX:TieredStopAtLevel=1", "-Dcom.sun.management.jmxremote")
+      jvmArgs = jvmArgsList.toList()
     }
 
     withType<JavaCompile> {
