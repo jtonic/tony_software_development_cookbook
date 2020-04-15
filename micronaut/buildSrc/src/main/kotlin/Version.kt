@@ -1,6 +1,6 @@
 const val jvmVersion = "1.8"
 
-const val kotlinVersion = "1.3.71"
+const val kotlinVersion = "1.3.72"
 
 const val micronautVersion = "1.3.3"
 const val mockitoVersion = "2.22.0"
