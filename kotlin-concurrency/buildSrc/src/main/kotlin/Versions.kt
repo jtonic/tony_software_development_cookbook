@@ -6,5 +6,6 @@ const val kotlinVersion = "1.3.72"
 const val kotlinCoroutinesVersion = "1.3.5"
 
 const val kotlinTestVersion = "3.4.2"
+const val kotestVersion = "4.0.3"
 
 const val slf4jVersion = "1.7.26"
