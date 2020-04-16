@@ -6,6 +6,17 @@ import io.kotlintest.specs.StringSpec
 class NullSafeTypeTest : StringSpec() {
 
   init {
+
+    "test safe call operator" {
+      data class User(val name: String, val address: String)
+
+      var user: User? = null
+      user?.address shouldBe null
+
+      user = User("Tony", "Mihai Bravu")
+      user?.address shouldBe "Mihai Bravu"
+    }
+
     "test elvis operator" {
       var address: String? = null
       address ?: "unknown address" shouldBe "unknown address"
