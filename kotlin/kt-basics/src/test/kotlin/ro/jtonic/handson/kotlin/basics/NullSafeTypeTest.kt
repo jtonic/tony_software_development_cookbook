@@ -1,5 +1,6 @@
 package ro.jtonic.handson.kotlin.basics
 
+import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import io.kotlintest.specs.StringSpec
@@ -46,6 +47,35 @@ class NullSafeTypeTest : StringSpec() {
 
       jtonicUserAddress shouldBe "Mihai Bravu"
       tonyUserAddress shouldBe null
+
+    }
+
+
+
+
+
+
+    "test not null assertion" {
+
+      fun length(s: String?): Int {
+        val notNullString: String = s!! //Kotlin.KotlinNullPointerException
+        return notNullString.length
+      }
+
+      length("jtonic") shouldBe 6
+
+      shouldThrow<NullPointerException> {
+        length(null)
+      }
+
+      shouldThrow<KotlinNullPointerException> {
+        length(null)
+      }
+
+
+
+
+
 
     }
 
