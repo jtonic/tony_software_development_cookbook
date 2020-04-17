@@ -1,9 +1,9 @@
-package ro.jtonic.handson.kotlin.concurrency
+package ro.jtonic.handson.kotlin.coroutines
 
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
-import ro.jtonic.handson.kotlin.concurrency.UserManagement.getAge
-import ro.jtonic.handson.kotlin.concurrency.UserManagement.getName
+import ro.jtonic.handson.kotlin.coroutines.UserManagement.getAge
+import ro.jtonic.handson.kotlin.coroutines.UserManagement.getName
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 

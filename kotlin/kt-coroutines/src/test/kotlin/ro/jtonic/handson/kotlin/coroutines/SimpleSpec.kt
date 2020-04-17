@@ -1,12 +1,12 @@
-package ro.jtonic.handson.kotlin.concurrency
+package ro.jtonic.handson.kotlin.coroutines
 
 import io.kotlintest.matchers.doubles.shouldBeGreaterThan
 import io.kotlintest.matchers.doubles.shouldBeLessThan
 import io.kotlintest.specs.StringSpec
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
-import ro.jtonic.handson.kotlin.concurrency.UserManagement.getAge
-import ro.jtonic.handson.kotlin.concurrency.UserManagement.getName
+import ro.jtonic.handson.kotlin.coroutines.UserManagement.getAge
+import ro.jtonic.handson.kotlin.coroutines.UserManagement.getName
 import java.util.concurrent.TimeUnit.SECONDS
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime

@@ -1,4 +1,4 @@
-package ro.jtonic.handson.kotlin.concurrency
+package ro.jtonic.handson.kotlin.coroutines
 
 import kotlinx.coroutines.delay
 import java.util.concurrent.TimeUnit
