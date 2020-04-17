@@ -16,5 +16,13 @@ class NullSafeTypeTest : StringSpec() {
       user = User("Tony", "Mihai Bravu")
       user?.address shouldBe "Mihai Bravu"
     }
+
+    "test elvis operator" {
+      var address: String? = null
+      address ?: "unknown address" shouldBe "unknown address"
+
+      address = "Kotlin Island"
+      address shouldBe "Kotlin Island"
+    }
   }
 }
