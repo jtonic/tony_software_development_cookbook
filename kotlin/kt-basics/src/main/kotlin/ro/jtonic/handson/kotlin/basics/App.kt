@@ -1,5 +1,5 @@
 package ro.jtonic.handson.kotlin.basics
 
-fun main(vararg args: String) {
+fun main() {
   println("Hello Kotlin!")
 }
