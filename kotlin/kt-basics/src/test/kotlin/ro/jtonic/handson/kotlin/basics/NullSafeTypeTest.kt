@@ -29,11 +29,6 @@ class NullSafeTypeTest : StringSpec() {
 
     }
 
-
-
-
-
-
     "test safe cast operator" {
 
       val jtonic = User("jtonic", "Mihai Bravu") as Any
@@ -49,11 +44,6 @@ class NullSafeTypeTest : StringSpec() {
       tonyUserAddress shouldBe null
 
     }
-
-
-
-
-
 
     "test not null assertion" {
 
@@ -72,18 +62,7 @@ class NullSafeTypeTest : StringSpec() {
         length(null)
       }
 
-
-
-
-
-
     }
-
-
-
-
-
-
 
   }
 }
