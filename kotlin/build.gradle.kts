@@ -15,6 +15,7 @@ subprojects {
 
   dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlin:kotlin-script-runtime:$kotlinVersion")
     implementation("org.slf4j:slf4j-simple:$slf4jVersion")
 
     testImplementation("io.kotlintest:kotlintest-runner-junit5:$kotlinTestVersion")
