@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: com.nstanciu.tutorials.mn.surveys
+---
+testFramework: kotlintest
+sourceLanguage: kotlin
