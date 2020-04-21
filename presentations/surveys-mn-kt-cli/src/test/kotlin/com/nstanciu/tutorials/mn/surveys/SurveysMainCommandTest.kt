@@ -21,8 +21,19 @@ object SurveysMainCommandTest : Spek({
             val args = arrayOf("-c")
             PicocliRunner.run(SurveysMainCommand::class.java, ctx, *args)
 
-            it("should display greeting") {
+            it("should display Configuration") {
                 assertTrue(baos.toString().contains("Configuration"))
+            }
+        }
+        context("invocation with --all") {
+            val baos = ByteArrayOutputStream()
+            System.setOut(PrintStream(baos))
+
+            val args = arrayOf("--all")
+            PicocliRunner.run(SurveysMainCommand::class.java, ctx, *args)
+
+            it("should display Hello") {
+                assertTrue(baos.toString().contains("Hello"))
             }
         }
     }
