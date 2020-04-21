@@ -9,7 +9,7 @@ import org.spekframework.spek2.style.specification.describe
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 
-object SurveysMnKtCliCommandTest : Spek({
+object SurveysMainCommandTest : Spek({
 
     describe("surveys") {
         val ctx = ApplicationContext.run(Environment.CLI, Environment.TEST)
@@ -19,7 +19,7 @@ object SurveysMnKtCliCommandTest : Spek({
             System.setOut(PrintStream(baos))
 
             val args = arrayOf("-c")
-            PicocliRunner.run(SurveysMnKtCliCommand::class.java, ctx, *args)
+            PicocliRunner.run(SurveysMainCommand::class.java, ctx, *args)
 
             it("should display greeting") {
                 assertTrue(baos.toString().contains("Configuration"))

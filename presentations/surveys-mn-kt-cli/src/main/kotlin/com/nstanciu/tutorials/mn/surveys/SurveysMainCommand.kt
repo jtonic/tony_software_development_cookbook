@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 @Command(name = "surveys", description = ["Survey management cli"],
         mixinStandardHelpOptions = true)
-class SurveysMnKtCliCommand : Runnable {
+class SurveysMainCommand : Runnable {
 
     @Inject
     private lateinit var confBean: ConfBean
@@ -25,7 +25,7 @@ class SurveysMnKtCliCommand : Runnable {
 
     companion object {
         @JvmStatic fun main(args: Array<String>) {
-            PicocliRunner.run(SurveysMnKtCliCommand::class.java, *args)
+            PicocliRunner.run(SurveysMainCommand::class.java, *args)
         }
     }
 }
