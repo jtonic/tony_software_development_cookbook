@@ -3,33 +3,27 @@ package com.nstanciu.tutorials.mn.surveys
 import io.micronaut.configuration.picocli.PicocliRunner
 import io.micronaut.context.ApplicationContext
 import io.micronaut.context.env.Environment
-import org.jetbrains.spek.api.Spek
-import org.jetbrains.spek.api.dsl.describe
-import org.jetbrains.spek.api.dsl.it
-import org.jetbrains.spek.api.dsl.on
 import org.junit.jupiter.api.Assertions.assertTrue
+import org.spekframework.spek2.Spek
+import org.spekframework.spek2.style.specification.describe
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
 
 object SurveysMnKtCliCommandTest : Spek({
 
-    describe("surveys-mn-kt-cli") {
+    describe("surveys") {
         val ctx = ApplicationContext.run(Environment.CLI, Environment.TEST)
 
-        on("invocation with -v") {
+        context("invocation with -c") {
             val baos = ByteArrayOutputStream()
             System.setOut(PrintStream(baos))
 
-            val args = arrayOf("-v")
+            val args = arrayOf("-c")
             PicocliRunner.run(SurveysMnKtCliCommand::class.java, ctx, *args)
 
             it("should display greeting") {
-                assertTrue(baos.toString().contains("Hi!"))
+                assertTrue(baos.toString().contains("Configuration"))
             }
-        }
-
-        on("other") {
-            // add more tests...
         }
     }
 })
