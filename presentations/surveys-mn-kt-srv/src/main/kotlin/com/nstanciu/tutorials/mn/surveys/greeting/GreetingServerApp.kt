@@ -10,6 +10,7 @@ object GreetingServerApp {
     Micronaut.build()
       .packages(GreetingServerApp::class.java.`package`.name)
       .mainClass(GreetingServerApp.javaClass)
+      .mainClass(GreetingServerApp.javaClass)
       .start()
   }
 }

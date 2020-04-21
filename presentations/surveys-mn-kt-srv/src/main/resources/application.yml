@@ -1,3 +1,20 @@
 micronaut:
   application:
     name: surveys-mn-kt-srv
+  server:
+    port: 8080
+    cors:
+      enabled: true
+  env:
+    deduction: false
+
+greeting:
+  client:
+    url: http://localhost::8080
+    path: /hello
+
+#  http:
+#    services:
+#      surveys:
+#        urls:
+#          - http://localhost:8080
