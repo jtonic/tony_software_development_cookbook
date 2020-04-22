@@ -5,7 +5,6 @@ cli:
   name: ${micronaut.application.name}
   version: 0.0.1
 
-greeting:
+surveys:
   client:
     url: http://localhost:8080
-    path: /hello

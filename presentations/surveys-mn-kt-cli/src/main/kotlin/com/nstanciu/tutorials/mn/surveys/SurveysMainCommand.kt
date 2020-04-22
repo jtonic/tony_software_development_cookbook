@@ -25,12 +25,12 @@ class SurveysMainCommand : Runnable {
         when {
           conf -> println(this.confBean.getConf())
           allSurveys -> {
-            val greet = this.client.getAllSurveys()
-            println(greet)
+            val allSurveys = this.client.getAllSurveys()
+            println(allSurveys)
           }
           else -> {
-            val greet = this.client.getAllSurveys()
-            println(greet)
+            val allSurveys = this.client.getAllSurveys()
+            println(allSurveys)
           }
         }
     }
