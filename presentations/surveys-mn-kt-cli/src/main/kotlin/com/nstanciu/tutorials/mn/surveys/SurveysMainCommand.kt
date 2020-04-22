@@ -12,12 +12,8 @@ class SurveysMainCommand : Runnable {
     @Inject
     private lateinit var confBean: ConfBean
 
-//    @Client("http://localhost:8080")
-//    @Inject
-//    private lateinit var client: RxHttpClient
-
     @Inject
-    private lateinit var client: GreetingClient
+    private lateinit var client: SurveysClient
 
     @Option(names = ["-c", "--conf"], description = ["Print configuration"])
     private var conf : Boolean = false
@@ -26,25 +22,20 @@ class SurveysMainCommand : Runnable {
     private var allSurveys : Boolean = false
 
     override fun run() {
-        // business logic here
         when {
           conf -> println(this.confBean.getConf())
           allSurveys -> {
-            val greet = this.client.greet()
+            val greet = this.client.getAllSurveys()
             println(greet)
           }
-/*
-          allSurveys -> {
-            val greet = this.client.retrieve(HttpRequest.GET<String>("/hello"), String::class.java).blockingFirst()
+          else -> {
+            val greet = this.client.getAllSurveys()
             println(greet)
           }
-*/
         }
     }
+}
 
-    companion object {
-        @JvmStatic fun main(args: Array<String>) {
-            PicocliRunner.run(SurveysMainCommand::class.java, *args)
-        }
-    }
+fun main(vararg args: String) {
+  PicocliRunner.run(SurveysMainCommand::class.java, *args)
 }

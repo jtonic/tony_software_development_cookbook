@@ -1,13 +1,13 @@
 package com.nstanciu.tutorials.mn.surveys
 
-import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.client.annotation.Client
 
 //@Client(id = "\${greeting.client.url}", path = "\${greeting.client.path}")
-@Client("\${greeting.client.url}\${greeting.client.path}")
-interface GreetingClient {
+//@Client("\${greeting.client.url}\${greeting.client.path}")
+@Client("http://localhost:8080/surveys")
+interface SurveysClient {
 
-  @Get(consumes = [MediaType.TEXT_PLAIN])
-  fun greet(): String
+  @Get
+  fun getAllSurveys(): String
 }

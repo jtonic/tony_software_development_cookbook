@@ -50,7 +50,7 @@ dependencies {
 }
 
 test.classpath += configurations.developmentOnly
-mainClassName = "com.nstanciu.tutorials.mn.surveys.SurveysMnKtCliCommand"
+mainClassName = "com.nstanciu.tutorials.mn.surveys.SurveysMainCommandKt"
 
 jar {
     manifest {
