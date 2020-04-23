@@ -43,5 +43,16 @@ class MainKtFeaturesTest : StringSpec() {
 
       personInfo shouldBe "Tony"
     }
+
+    "test expression is almost everywhere (try/catch)" {
+
+      val age = try {
+        Integer.parseInt("tony's age")
+      } catch (e: Exception) {
+        90
+      }
+
+      age shouldBe 90
+    }
   }
 }
