@@ -1,12 +1,9 @@
 package ro.jtonic.handson.kotlin.basics
 
-class App {
+object App {
 
-  companion object {
-
-    @JvmStatic
-    fun main(vararg args: String) {
-      println("Hello Kotlin!")
-    }
+  @JvmStatic
+  fun main(vararg args: String) {
+    println("Hello Kotlin!")
   }
 }
