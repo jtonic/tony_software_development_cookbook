@@ -78,9 +78,13 @@ class MainKtFeaturesTest : StringSpec() {
       toJson(firstName = "Antonel", lastName = "Pazargic") shouldContain """"age": 18"""
     }
 
-    "test type inference" {
+    "test scope methods" {
 
-      val tony = Employee("Antonel", "Pazargic")
+      with(Employee("Antonel", "Pazargic")) {
+        firstName shouldBe "Antonel"
+        lastName shouldBe "Pazargic"
+        age shouldBe 18
+      }
     }
   }
 }
