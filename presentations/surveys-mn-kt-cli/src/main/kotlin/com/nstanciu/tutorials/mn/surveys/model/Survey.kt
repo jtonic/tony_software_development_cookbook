@@ -1,10 +1,12 @@
 package com.nstanciu.tutorials.mn.surveys.model
 
+import io.micronaut.core.annotation.Introspected
 import java.time.LocalDateTime
 import java.util.UUID
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.Size
 
+@Introspected
 data class Survey(
   private val id: UUID? = null,
   private val name: @Size(min = 2) String? = null,
