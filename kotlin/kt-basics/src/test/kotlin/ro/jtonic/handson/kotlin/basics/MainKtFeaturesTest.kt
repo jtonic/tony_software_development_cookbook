@@ -30,5 +30,18 @@ class MainKtFeaturesTest : StringSpec() {
       }
       personInfo shouldBe "Tony"
     }
+
+    "test smart cast" {
+
+      val person = Person("Tony", 18) as Any
+
+      val personInfo = if(person is Person) {
+        person.name
+      } else {
+        person.toString()
+      }
+
+      personInfo shouldBe "Tony"
+    }
   }
 }
