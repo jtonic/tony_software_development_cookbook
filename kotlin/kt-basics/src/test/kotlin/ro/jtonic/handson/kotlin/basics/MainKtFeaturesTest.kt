@@ -1,7 +1,9 @@
 package ro.jtonic.handson.kotlin.basics
 
 import io.kotest.matchers.shouldBe
+import io.kotlintest.matchers.string.shouldContain
 import io.kotlintest.specs.StringSpec
+import org.intellij.lang.annotations.Language
 
 class MainKtFeaturesTest : StringSpec() {
 
@@ -60,6 +62,20 @@ class MainKtFeaturesTest : StringSpec() {
       val tony = Employee("Antonel", "Pazargic", 18)
 
       tony.fullName shouldBe "Antonel Pazargic"
+    }
+
+    "test multiline string interpolation, named and default parameter" {
+
+      @Language("json")
+      fun toJson(firstName: String, lastName: String, age: Int = 18) = """
+        {
+          "firstName": "$firstName",
+          "lastName": "$lastName",
+          "age": $age
+        }
+      """.trimIndent()
+
+      toJson(firstName = "Antonel", lastName = "Pazargic") shouldContain """"age": 18"""
     }
   }
 }
