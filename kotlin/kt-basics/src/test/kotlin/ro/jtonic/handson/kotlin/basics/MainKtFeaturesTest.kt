@@ -77,6 +77,17 @@ class MainKtFeaturesTest : StringSpec() {
 
       toJson(firstName = "Antonel", lastName = "Pazargic") shouldContain """"age": 18"""
     }
+
+    "test type inference" {
+
+      val emp1: Employee = Employee("Antonel", "Pazargic", 50)
+      val emp2 = Employee("Antonel", "Pazargic", 50)
+
+      fun getName(employee: Employee): String {
+        return employee.firstName
+      }
+      fun sum(a: Int, b: Int) = a + b
+    }
   }
 }
 
