@@ -86,6 +86,18 @@ class MainKtFeaturesTest : StringSpec() {
         age shouldBe 18
       }
     }
+
+    "test nested function" {
+
+      fun double(a: Int): Int {
+
+        fun multiply(a1: Int, a2: Int) = a1 * a2
+
+        return multiply(a, a)
+      }
+
+      double(2) shouldBe 4
+    }
   }
 }
 
