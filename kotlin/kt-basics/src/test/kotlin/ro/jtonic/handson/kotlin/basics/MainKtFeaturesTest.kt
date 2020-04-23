@@ -98,8 +98,20 @@ class MainKtFeaturesTest : StringSpec() {
 
       double(2) shouldBe 4
     }
+
+    "test operator overloaded" {
+
+      operator fun Employee.plus(other: Employee) = this.salary + other.salary
+
+      val employee1 = Employee("Antonel", "Pazargic", 50, 10000)
+      val employee2 = Employee("Antonel", "Pazargic", 20, 1000)
+
+      employee1 + employee2 shouldBe 11000
+    }
   }
 }
+
+
 
 val Employee.fullName: String
   get() =
