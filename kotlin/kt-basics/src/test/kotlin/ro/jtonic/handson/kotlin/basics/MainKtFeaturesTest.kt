@@ -55,13 +55,16 @@ class MainKtFeaturesTest : StringSpec() {
       age shouldBe 90
     }
 
-    "test extension method" {
-
-      fun Employee.fullName() = "${this.firstName} ${this.lastName}"
+    "test extension property" {
 
       val tony = Employee("Antonel", "Pazargic", 18)
 
-      tony.fullName() shouldBe "Antonel Pazargic"
+      tony.fullName shouldBe "Antonel Pazargic"
     }
   }
 }
+
+val Employee.fullName: String
+  get() =
+    "${this.firstName} ${this.lastName}"
+
