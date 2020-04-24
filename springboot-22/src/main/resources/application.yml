@@ -1,0 +1,6 @@
+debug: true
+
+jtonic:
+  handson:
+    app:
+      name: "SpringBoot 2.2 example"

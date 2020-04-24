@@ -1,0 +1,7 @@
+debug: true
+
+jtonic:
+  handson:
+    app:
+      name: "[TEST] SpringBoot 2.2 example"
+      description: "[TEST] SpringBoot 2.2 example"
