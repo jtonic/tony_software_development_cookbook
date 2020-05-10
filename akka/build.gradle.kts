@@ -11,11 +11,10 @@ repositories {
 }
 
 dependencies {
-  implementation("com.typesafe.akka:akka-actor_$scalaVersion:$akkaVersion")
-//  implementation("org.slf4j:slf4j-simple:$slf4jVersion")
-  implementation("ch.qos.logback:logback-classic:$logbackVersion")
+  implementation("com.typesafe.akka:akka-actor_${Versions.scala}:${Versions.akka}")
+  implementation("ch.qos.logback:logback-classic:${Versions.logback}")
 
-  testImplementation("junit:junit:$junitVersion")
+  testImplementation("junit:junit:${Versions.junit}")
 }
 
 configure<JavaPluginConvention> {
@@ -23,5 +22,5 @@ configure<JavaPluginConvention> {
 }
 
 application {
-  mainClassName = "ro.jtonic.handson.akka.SimpleActorApp"
+  mainClassName = "ro.jtonic.handson.akka.ActorSystemApp"
 }
