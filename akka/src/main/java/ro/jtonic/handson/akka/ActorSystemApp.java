@@ -2,7 +2,7 @@ package ro.jtonic.handson.akka;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
-import java.util.concurrent.TimeUnit;
+import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ro.jtonic.handson.akka.actors.GreeteeActor;
@@ -26,8 +26,12 @@ public class ActorSystemApp {
 
       greeterActor.tell("Tony", greeteeActor);
 
-      TimeUnit.MICROSECONDS.sleep(500);
-    } catch (InterruptedException e) {
+      System.out.println("====================================");
+      System.out.println("Press ENTER to stop the application!");
+      System.out.println("====================================");
+      System.in.read();
+
+    } catch (IOException e) {
       e.printStackTrace();
     } finally {
       actorSystem.terminate();
