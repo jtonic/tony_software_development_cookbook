@@ -4,7 +4,7 @@ plugins {
   application
 }
 
-group = "ro.jtonic.handson.finagle"
+group = "ro.jtonic.handson"
 version = "1.0-SNAPSHOT"
 
 repositories {
