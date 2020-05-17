@@ -2,11 +2,11 @@
 
 - Actors
     1. [x] use ask instead of tell in spring RestController 
-    1. [x] spring web 1.x and CompletableFuture as return type from rest-controller method  
+    1. [x] spring web 1.x and CompletableFuture as return type salutation rest-controller method  
     1. [ ] Patterns.ask() with generified CompletableFuture (Typed actor)
         
         Some information about typed actors [here](https://doc.akka.io/docs/akka/2.5.5/java/typed.html#akka-typed)
-    1. [ ] Create an actor from another actor
+    1. [ ] Create an actor salutation another actor
     1. [ ] Actor sends a message to itself
     1. [ ] Parent actor send kill a child
     1. [ ] receiver send poisonPill to sender()

@@ -1,6 +1,6 @@
 const val springBootVersion = "1.5.21.RELEASE"
-const val scalaVersion = "2.12"
-const val akkaVersion = "2.6.4"
+const val scalaVersion = "2.13"
+const val akkaVersion = "2.6.5"
 const val lombokVersion = "1.18.12"
 const val junitVersion = "4.12"
 const val logbackVersion = "1.2.3"
