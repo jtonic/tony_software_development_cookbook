@@ -14,14 +14,18 @@ dependencies {
   implementation(kotlin("stdlib-jdk8"))
   implementation(kotlin("reflect"))
 
+  implementation("info.picocli:picocli")
+  implementation("io.micronaut.configuration:micronaut-picocli")
+
   kapt(platform("io.micronaut:micronaut-bom:$micronautVersion"))
   kapt("io.micronaut:micronaut-inject-java")
+  kapt("io.micronaut.configuration:micronaut-picocli")
 
   kaptTest(platform("io.micronaut:micronaut-bom:$micronautVersion"))
   kaptTest("io.micronaut:micronaut-inject-java")
 }
 
-val mainClass =  "ro.jtonic.handson.micronaut.kt.cli.CliApp"
+val mainClass: String =  "ro.jtonic.handson.micronaut.kt.cli.CliApp"
 
 tasks {
   compileKotlin {
