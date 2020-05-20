@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: handsonsb23
+server:
+  port: 8080
