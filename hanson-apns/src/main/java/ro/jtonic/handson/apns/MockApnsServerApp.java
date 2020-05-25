@@ -10,8 +10,10 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import java.time.Instant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
 
-public class MockApnsServerApp {
+public class MockApnsServerApp implements CommandLineRunner  {
 
   public static final Logger LOGGER = LoggerFactory.getLogger("mock-apns-server");
 
@@ -22,7 +24,14 @@ public class MockApnsServerApp {
   protected static final String CA_CERTIFICATE_FILENAME = "/certs/ca/ca.pem";
   public static final int PORT = 8443;
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
+
+    SpringApplication.run(MockApnsServerApp.class, args);
+  }
+
+  @Override
+  public void run(String... args) throws Exception {
+
     final MockApnsServer apnsServer = new MockApnsServerBuilder()
         .setTrustedClientCertificateChain(
             MockApnsServerApp.class.getResourceAsStream(CA_CERTIFICATE_FILENAME))
@@ -44,6 +53,7 @@ public class MockApnsServerApp {
 
     @Override
     public void handlePushNotificationAccepted(final ApnsPushNotification pushNotification) {
+
       LOGGER.info("Accepted push notification payload: {}", pushNotification.getPayload());
     }
 
@@ -51,6 +61,7 @@ public class MockApnsServerApp {
     public void handlePushNotificationRejected(final ApnsPushNotification pushNotification,
                                                final RejectionReason rejectionReason,
                                                final Instant deviceTokenExpirationTimestamp) {
+
       LOGGER.info("Rejected push notification payload: {}", pushNotification.getPayload());
     }
   }

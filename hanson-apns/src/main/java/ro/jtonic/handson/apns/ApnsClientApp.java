@@ -12,11 +12,12 @@ import java.util.Random;
 import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
 
-public class ApnsClientApp {
+public class ApnsClientApp implements CommandLineRunner {
 
   public static final Logger LOGGER = LoggerFactory.getLogger("apns-client");
-
 
   private static final String HOST = "localhost";
   private static final int PORT = 8443;
@@ -31,7 +32,36 @@ public class ApnsClientApp {
   private static final String DEVICE_TOKEN = generateRandomDeviceToken();
   private static final String PAYLOAD = generateRandomPayload();
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
+
+    SpringApplication.run(ApnsClientApp.class, args);
+  }
+
+  protected static String generateRandomDeviceToken() {
+
+    final byte[] tokenBytes = new byte[TOKEN_LENGTH];
+    new Random().nextBytes(tokenBytes);
+
+    final StringBuilder builder = new StringBuilder(TOKEN_LENGTH * 2);
+
+    for (final byte b : tokenBytes) {
+      builder.append(String.format("%02x", b));
+    }
+
+    return builder.toString();
+  }
+
+  protected static String generateRandomPayload() {
+
+    final ApnsPayloadBuilder payloadBuilder = new SimpleApnsPayloadBuilder();
+    payloadBuilder.setAlertBody(UUID.randomUUID().toString());
+
+    return payloadBuilder.build();
+  }
+
+  @Override
+  public void run(String... args) throws Exception {
+
     ApnsClient client = null;
     try {
       client = new ApnsClientBuilder()
@@ -62,25 +92,5 @@ public class ApnsClientApp {
         LOGGER.info("Connection closed.");
       }
     }
-  }
-
-  protected static String generateRandomDeviceToken() {
-    final byte[] tokenBytes = new byte[TOKEN_LENGTH];
-    new Random().nextBytes(tokenBytes);
-
-    final StringBuilder builder = new StringBuilder(TOKEN_LENGTH * 2);
-
-    for (final byte b : tokenBytes) {
-      builder.append(String.format("%02x", b));
-    }
-
-    return builder.toString();
-  }
-
-  protected static String generateRandomPayload() {
-    final ApnsPayloadBuilder payloadBuilder = new SimpleApnsPayloadBuilder();
-    payloadBuilder.setAlertBody(UUID.randomUUID().toString());
-
-    return payloadBuilder.build();
   }
 }
