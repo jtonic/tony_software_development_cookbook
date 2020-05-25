@@ -16,6 +16,7 @@
     <pushy.version>0.14.0</pushy.version>
     <logback.version>1.2.3</logback.version>
     <netty-tcnative-boringssl-static.version>2.0.29.Final</netty-tcnative-boringssl-static.version>
+    <start-class>ro.jtonic.handson.apns.MockApnsServerApp</start-class>
   </properties>
 
   <dependencies>
@@ -68,7 +69,25 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <version>${spring-boot.version}</version>
+        <configuration>
+          <mainClass>${start-class}</mainClass>
+        </configuration>
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>apns-client</id>
+      <properties>
+        <start-class>ro.jtonic.handson.apns.ApnsClientApp</start-class>
+      </properties>
+    </profile>
+    <profile>
+      <id>mock-apns-server</id>
+      <properties>
+        <start-class>ro.jtonic.handson.apns.MockApnsServerApp</start-class>
+      </properties>
+    </profile>
+  </profiles>
 </project>
