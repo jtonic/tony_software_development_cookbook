@@ -16,7 +16,6 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-    <spring-shell.version>2.0.1.RELEASE</spring-shell.version>
   </properties>
 
 	<dependencies>
@@ -36,15 +35,9 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-    <dependency>
-      <groupId>org.springframework.shell</groupId>
-      <artifactId>spring-shell-starter</artifactId>
-      <version>${spring-shell.version}</version>
-    </dependency>
-	</dependencies>
+  </dependencies>
 
 	<build>
-
     <finalName>es-cli-${version}</finalName>
 		<plugins>
 			<plugin>
@@ -53,5 +46,32 @@
 			</plugin>
 		</plugins>
 	</build>
+
+  <profiles>
+    <profile>
+      <id>tools</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <spring-shell.version>2.0.1.RELEASE</spring-shell.version>
+      </properties>
+      <dependencies>
+        <dependency>
+          <groupId>org.springframework.shell</groupId>
+          <artifactId>spring-shell-starter</artifactId>
+          <version>${spring-shell.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>com.fasterxml.jackson.datatype</groupId>
+          <artifactId>jackson-datatype-jdk8</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
 
 </project>
