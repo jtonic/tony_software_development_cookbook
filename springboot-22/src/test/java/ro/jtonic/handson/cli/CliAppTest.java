@@ -1,7 +1,8 @@
-package ro.jtonic.handson.springboot22;
+package ro.jtonic.handson.cli;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,7 +17,8 @@ import org.springframework.test.context.TestPropertySource;
 
 @SpringBootTest
 @TestPropertySource("classpath:/application-test.yml")
-class Springboot22ApplicationTest {
+@Disabled
+class CliAppTest {
 
   @Value("${jtonic.handson.app.name}")
   private String appName;

@@ -1,6 +1,9 @@
-debug: true
+debug: false
 
 jtonic:
   handson:
     app:
-      name: "SpringBoot 2.2 example"
+      name: "SpringBoot cli sample"
+logging:
+  level:
+    root: off
