@@ -1,11 +1,12 @@
 package ro.jtonic.handson.handsonsb23
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.runApplication
+import org.springframework.boot.builder.SpringApplicationBuilder
 
 @SpringBootApplication
-class HandsonSb23Application
+class CliApp
 
 fun main(args: Array<String>) {
-	runApplication<HandsonSb23Application>(*args)
+
+  SpringApplicationBuilder(CliApp::class.java).run(*args)
 }

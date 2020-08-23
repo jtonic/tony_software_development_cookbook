@@ -3,3 +3,7 @@ spring:
     name: handsonsb23
 server:
   port: 8080
+
+logging:
+  level:
+    root: off
