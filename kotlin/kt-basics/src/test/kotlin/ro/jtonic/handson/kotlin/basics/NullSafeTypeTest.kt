@@ -1,15 +1,16 @@
 package ro.jtonic.handson.kotlin.basics
 
 import io.kotest.assertions.throwables.shouldThrow
+import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
-import io.kotlintest.specs.StringSpec
+import ro.jtonic.handson.kotlin.basics.model.Person
 
-class NullSafeTypeTest : StringSpec() {
+class NullSafeTypeTest : FreeSpec () {
 
   init {
 
-    "test safe call operator" {
+    "test safe call operator" - {
 
       var user: User? = null
       user?.address shouldBe null
@@ -57,12 +58,6 @@ class NullSafeTypeTest : StringSpec() {
       shouldThrow<NullPointerException> {
         length(null)
       }
-
-      shouldThrow<KotlinNullPointerException> {
-        length(null)
-      }
-
     }
-
   }
 }

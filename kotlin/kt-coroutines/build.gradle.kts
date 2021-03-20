@@ -3,9 +3,9 @@ plugins {
 }
 
 dependencies {
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion")
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
 }
 
 application {
-  mainClassName = "ro.jtonic.handson.kotlin.coroutines.App"
+  mainClass.set("ro.jtonic.handson.kotlin.coroutines.App")
 }

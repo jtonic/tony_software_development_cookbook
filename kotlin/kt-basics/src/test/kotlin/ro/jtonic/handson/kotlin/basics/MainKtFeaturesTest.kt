@@ -1,16 +1,16 @@
 package ro.jtonic.handson.kotlin.basics
 
+import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
-import io.kotlintest.matchers.string.shouldContain
-import io.kotlintest.specs.StringSpec
+import io.kotest.matchers.string.shouldContain
 import org.intellij.lang.annotations.Language
+import ro.jtonic.handson.kotlin.basics.model.Person
 
 class MainKtFeaturesTest : StringSpec() {
 
   init {
 
     "test pattern matching with when (1)" {
-
         val no = 7
 
         val day: String = when(no) {
