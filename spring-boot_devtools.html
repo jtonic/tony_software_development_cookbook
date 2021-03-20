@@ -1,0 +1,486 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Recipe 1: Streamline the springboot application development with spring-boot devtools · Tony's software development cookbook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-smart-nav-collapse/smart-nav-collapse.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/jtonic/tony_software_development_cookbook/issues" target="_blank" class="custom-link">Contact us / Support</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="toc.html">
+            
+                <a href="toc.html">
+            
+                    
+                    Table of contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Code quality
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="the_ignorant_jacoco.html">
+            
+                <a href="the_ignorant_jacoco.html">
+            
+                    
+                    Recipe 1: Code coverage with the “ignorant” jacoco
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    IntelliJ Idea
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="idea_code_format_with_editorconfig.html">
+            
+                <a href="idea_code_format_with_editorconfig.html">
+            
+                    
+                    Recipe 1: Code format using IntelliJ Idea and .editorconfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Spring framework and companion projects
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="spring-boot_devtools.html">
+            
+                <a href="spring-boot_devtools.html">
+            
+                    
+                    Recipe 1: Streamline the springboot application development with spring-boot devtools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Recipe 1: Streamline the springboot application development with spring-boot devtools</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="recipe-1-streamline-the-springboot-application-development-with-spring-boot-devtools"><strong>Recipe 1:</strong> Streamline the springboot application development with spring-boot devtools</h1>
+<hr>
+<h2 id="description">Description</h2>
+<p>  Spring boot devtools goal is to make the spring boot application development more efficient.</p>
+<p>  It provides application reload, live reload, remote reload, disables cache and more.</p>
+<p>  For me (as a daily backend developer) the most important feature of devtools is the spring application reload.
+  In fact devtools doesn&apos;t reload entire application context.
+  It has 2 class loaders, one of them is the one responsible for loading the project classes and resources.
+  This way the spring application reload is quicker.</p>
+<p>  For further information about the spring-boot devtools go to the <a href="#References">links below</a>.</p>
+<h2 id="context-prerequisites">Context (prerequisites)</h2>
+<ul>
+<li>spring-boot application</li>
+<li>[optional] IntelliJ Idea</li>
+</ul>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><p>quicker changes reload (configuration and classes) in a running spring-boot application</p>
+</li>
+<li><p>no longer restart the application after each and every config/classes changes</p>
+</li>
+</ul>
+<h2 id="steps">Steps</h2>
+<ul>
+<li><p>Add the following dependency to spring boot (maven based) application</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-devtools<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>configure the trigger file in <code>application.yaml</code></p>
+<pre><code class="lang-yaml"><span class="hljs-attr">spring:</span>
+<span class="hljs-attr">    devtools:</span>
+<span class="hljs-attr">        restart:</span>
+<span class="hljs-attr">            trigger-file:</span> .reloadtrigger
+</code></pre>
+<blockquote>
+<p>This is useful because we don&apos;t want to trigger a spring application reload whenever we modified a java type or resource</p>
+</blockquote>
+</li>
+<li><p>create the file <code>.reloadtrigger</code> in the folder <code>/${PRJ_HOME}/src/main/resources</code></p>
+</li>
+<li><p>start springboot application</p>
+</li>
+<li><p>modify the code (java types or some configuration files)</p>
+</li>
+<li><p>change the file <code>.reloadtrigger</code> and save it.</p>
+<blockquote>
+<p>spring restarts the application in a very short time (see the explanation above with the custom classloader)</p>
+</blockquote>
+</li>
+<li><p>Starting with spring-boot version 2.2 all the application beans could be configured as lazy through an application configuration (no code changes).</p>
+<p>It is debatable if this is useful for production but for development/tests this is definitely very handy.</p>
+<p>Configure all application beans as lazy.</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">spring:</span>
+<span class="hljs-attr">  main:</span>
+<span class="hljs-attr">    lazy-initialization:</span> <span class="hljs-literal">true</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="configure-intellij-idea-spring-application-to-use-devtools">Configure IntelliJ Idea spring application to use devtools</h3>
+<p>IntelliJ Idea simplify further its integration with spring.</p>
+<p>It is no longer needed to update and save the <code>.reloadtrigger</code> file. IntelliJ Idea do it for us.</p>
+<p><strong>Steps:</strong></p>
+<ul>
+<li><p>create a spring application run configuration.
+The easy way of doing this is to run the application using the green arrow in the editor gutter.</p>
+<p>See <img src="images/spring/run spring application.png" alt="Run spring app|427&#x200A;&#xD7;&#x200A;246,50%" title="Run spring app"></p>
+</li>
+<li><p>configure the update and frame deactivation actions.
+The configuration should be as shown in the image below</p>
+<p><img src="images/spring/run debug configuration.png" alt="Config run application"></p>
+</li>
+<li><p>Run the application.</p>
+<blockquote>
+<p>Hint:I really like the new Services tool window.</p>
+</blockquote>
+<p><img src="images/spring/Run springboot application.png" alt="Run spring boot application"></p>
+<blockquote>
+<p>When debugging application hot swap kicks in. If it fails it falls back to update spring application based on trigger file.</p>
+<p>When running the application and hot swap makes no sense the spring application gets reloaded based on trigger file.</p>
+</blockquote>
+</li>
+<li><p>Do some modification in the code (say rest controller java class)</p>
+</li>
+<li><p>Update spring boot application and keep an eye on the console to see how spring reload the changes in the application context</p>
+<p><img src="images/spring/refresh application.png" alt="Reload spring boot application"></p>
+</li>
+<li><p>See below how quick this whole spring context reload is. It really impressive.</p>
+<p><img src="images/spring/fast app reload.png" alt="How quick the spring application reload is"></p>
+<blockquote>
+<p>In IntelliJ Idea <code>debug mode</code></p>
+<ul>
+<li>first how swap kick in,</li>
+<li>if it fails it falls back to update spring app using trigger file</li>
+</ul>
+<p>In <code>run mode</code> the spring app update based on trigger fires.</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>Spring boot devtools have more useful features for local and remote development.</p>
+<p>Please be aware that the spring-boot-devtools must not be included in the prod deliverable.</p>
+<p>In case of <code>using the exploded springboot application - folder structure</code>, very useful in case of docker/kubernetes cloud solution  resource consumption efficiency the <code>spring-boot-devtools</code> is included. <strong><em>In this case it has to be removed during the build.</em></strong></p>
+</blockquote>
+<h2 id="take-away">Take away</h2>
+<ul>
+<li><p>The local development efficiency can be improved through usage of spring devtools.</p>
+</li>
+<li><p>Through a easy configuration of the spring-boot application and (optionally) IntelliJ Idea IDE, the  <code>run/debug | test | code/config changes</code> loop can be reduced to maximum one second or two, depending of the project size.</p>
+</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.vojtechruzicka.com/spring-boot-devtools/" target="_blank">medium article</a></li>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-devtools" target="_blank">official documentation</a></li>
+<li><a href="https://www.baeldung.com/spring-boot-devtools" target="_blank">spring-boot devtools by baeldung</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Recipe 1: Streamline the springboot application development with spring-boot devtools","level":"1.5.1","depth":2,"previous":{"title":"Spring framework and companion projects","level":"1.5","depth":1,"ref":"","articles":[{"title":"Recipe 1: Streamline the springboot application development with spring-boot devtools","level":"1.5.1","depth":2,"path":"spring-boot_devtools.md","ref":"spring-boot_devtools.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchorjs","katex","block-align","flexible-alerts","creativecommons","fontsettings","smart-nav-collapse"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"family":"sans","size":2,"theme":"sepia"},"highlight":{},"creativecommons":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"smart-nav-collapse":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tony's software development cookbook","links":{"sidebar":{"Contact us / Support":"https://github.com/jtonic/tony_software_development_cookbook/issues"}},"gitbook":"*"},"file":{"path":"spring-boot_devtools.md","mtime":"2021-03-20T08:03:48.212Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-20T08:05:04.794Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-anchorjs/anchor.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-smart-nav-collapse/smart-nav-collapse.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

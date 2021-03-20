@@ -1,0 +1,433 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Recipe 1: Code format using IntelliJ Idea and .editorconfig · Tony's software development cookbook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-block-align/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-smart-nav-collapse/smart-nav-collapse.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/jtonic/tony_software_development_cookbook/issues" target="_blank" class="custom-link">Contact us / Support</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="toc.html">
+            
+                <a href="toc.html">
+            
+                    
+                    Table of contents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Code quality
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="the_ignorant_jacoco.html">
+            
+                <a href="the_ignorant_jacoco.html">
+            
+                    
+                    Recipe 1: Code coverage with the “ignorant” jacoco
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    IntelliJ Idea
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="idea_code_format_with_editorconfig.html">
+            
+                <a href="idea_code_format_with_editorconfig.html">
+            
+                    
+                    Recipe 1: Code format using IntelliJ Idea and .editorconfig
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Spring framework and companion projects
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="spring-boot_devtools.html">
+            
+                <a href="spring-boot_devtools.html">
+            
+                    
+                    Recipe 1: Streamline the springboot application development with spring-boot devtools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Recipe 1: Code format using IntelliJ Idea and .editorconfig</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="recipe-1-code-format-using-intellij-idea-and-editorconfig">Recipe 1: Code format using IntelliJ Idea and .editorconfig</h1>
+<hr>
+<h2 id="description">Description</h2>
+<p>  It is always important to comply with the best practices and code styles.</p>
+<p>  Moreover the ability to share the
+  common format configuration between developers is almost a must have for the code quality.</p>
+<p>  .editorconfig is a trend in terms of code formatting/style, and Jetbrains team brings this to a new level to stay close to their <code>Develop with pleasure</code> motto.</p>
+<h2 id="receipt">Receipt</h2>
+<p>  Configure the .editorconfig in IntelliJ Idea.</p>
+<blockquote>
+<p>Besides the built-in .editorconfig formatting rules, IntelliJ Idea (2019.2+) provides additional ones, corresponding to the ones existent in this IDE.</p>
+<p>Moreover .editorconfig files could be arranged hierarchically so that some rules might be overridden in a particular folder.</p>
+</blockquote>
+<h2 id="context-prerequisites">Context (prerequisites)</h2>
+<ul>
+<li>IntelliJ Idea 2019.2+</li>
+</ul>
+<h2 id="benefits">Benefits</h2>
+<ul>
+<li><p>apart for the common editorconfig rules,</p>
+</li>
+<li><p>IntelliJ Idea support for .editorconfig go further and allows to (practically) configure every single Idea editor code style rules, those that can be seen in the Idea <code>Preferences | Editor | Code Style | Java</code> and image below.</p>
+<p><img src="images/idea/editorconfig/idea_settings_editor_code_style.png" alt="Idea editor code style settings"></p>
+</li>
+<li><p>and through Idea reformat code action and idea intentions all wrongly formatted files could be addressed extremely easily</p>
+</li>
+<li><p>and, moreover, share the .editorconfig file in VCS (git) so that whoever works on the project use the same formatting rules.</p>
+</li>
+</ul>
+<h2 id="steps">Steps</h2>
+<ul>
+<li><p>create a new .editorconfig file in the project root, using <code>File | New | EditorConfig file</code> menu item.</p>
+<p><img src="images/idea/editorconfig/new editorconfig.png" alt="create new editorconfig in project root"></p>
+</li>
+<li><p>in the dialog select the ij specific rules (as comments) for specific languages/file types.</p>
+<p><img src="images/idea/editorconfig/select ij configuration - commented.png" alt="select ij specific config"></p>
+</li>
+<li><p>check the .editorconfig changes using the preview <code>using the eye in the editor gutter</code>.</p>
+<p><img src="images/idea/editorconfig/preview editorconfig changes.png" alt="run the editorconfig preview"></p>
+</li>
+<li><p>after selecting a file as a target of the editor config preview, the editorconfig file is split with the target in the editor.</p>
+<p><img src="images/idea/editorconfig/editorconfig and preview side by side.png" alt="see the editorconfig changes in preview"></p>
+<blockquote>
+<p>Idea automatically configure its code formatting support based on the existing .editorconfig file.</p>
+<p>We can check if .editorconfig is enabled in Idea by getting to the Idea <code>Preferences | Editor | Code Style</code>.</p>
+</blockquote>
+<p><img src="images/idea/editorconfig/enable editorconfig support.png" alt=".editorconfig enabled in idea"></p>
+<blockquote>
+<p>Idea show the support it is using for the current open file in (the right hand side of) the status bar.</p>
+</blockquote>
+<p><img src="images/idea/editorconfig/check if editorconfig is used by idea for the current file.png" alt="is .editorconfig enabled for the current editor"></p>
+</li>
+</ul>
+<h2 id="take-away">Take away</h2>
+<p>Through .editorconfig improved  support in IntelliJ idea developers can benefit from:</p>
+<ul>
+<li>working with the wellknown code style (formatting) tool - .editorconfig</li>
+<li>and furthermore take advantages of all Idea code style rules, actions and intentions.</li>
+<li>and have all this configuration auto-discovered by IntelliJ idea (no extra configuration on our side to benefit from a shared well setup .editorconfig)</li>
+</ul>
+<p>Get the code well formatted just hit <code>Find action</code> or <code>ctrl-shift-a</code> and choose as can be seen below.</p>
+<p><img src="images/idea/editorconfig/reformat_code_action.png" alt="Reformat code"></p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://blog.jetbrains.com/idea/2019/06/managing-code-style-on-a-directory-level-with-editorconfig/" target="_blank">code style in IntelliJ Idea 2019.2 with .editorconfig</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Recipe 1: Code format using IntelliJ Idea and .editorconfig","level":"1.4.1","depth":2,"next":{"title":"Spring framework and companion projects","level":"1.5","depth":1,"ref":"","articles":[{"title":"Recipe 1: Streamline the springboot application development with spring-boot devtools","level":"1.5.1","depth":2,"path":"spring-boot_devtools.md","ref":"spring-boot_devtools.md","articles":[]}]},"previous":{"title":"IntelliJ Idea","level":"1.4","depth":1,"ref":"","articles":[{"title":"Recipe 1: Code format using IntelliJ Idea and .editorconfig","level":"1.4.1","depth":2,"path":"idea_code_format_with_editorconfig.md","ref":"idea_code_format_with_editorconfig.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["anchorjs","katex","block-align","flexible-alerts","creativecommons","fontsettings","smart-nav-collapse"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"block-align":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"family":"sans","size":2,"theme":"sepia"},"highlight":{},"creativecommons":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"smart-nav-collapse":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Tony's software development cookbook","links":{"sidebar":{"Contact us / Support":"https://github.com/jtonic/tony_software_development_cookbook/issues"}},"gitbook":"*"},"file":{"path":"idea_code_format_with_editorconfig.md","mtime":"2021-03-20T08:03:48.196Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-03-20T08:05:04.794Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-anchorjs/anchor.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-smart-nav-collapse/smart-nav-collapse.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
