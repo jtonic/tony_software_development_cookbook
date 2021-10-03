@@ -1,16 +1,17 @@
 package io.kotlintest.provided
 
-import io.kotlintest.AbstractProjectConfig
-import io.kotlintest.FailureFirstSpecExecutionOrder
-import io.kotlintest.IsolationMode
+import io.kotest.core.config.AbstractProjectConfig
+import io.kotest.core.spec.IsolationMode
+import io.kotest.core.spec.SpecExecutionOrder
+
 
 object ProjectConfig : AbstractProjectConfig() {
 
   override val globalAssertSoftly: Boolean
     get() = true
 
-  override fun specExecutionOrder() = FailureFirstSpecExecutionOrder
+  override val specExecutionOrder = SpecExecutionOrder.FailureFirst
 
-  override fun isolationMode() = IsolationMode.InstancePerLeaf
+  override val isolationMode = IsolationMode.InstancePerLeaf
 
 }

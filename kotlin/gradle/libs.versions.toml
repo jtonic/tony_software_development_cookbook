@@ -1,0 +1,30 @@
+##########################################################################################
+# More information at https://docs.gradle.org/7.2/userguide/platforms.html#sub:conventional-dependencies-toml
+##########################################################################################
+
+[versions]
+appVersion = "0.1.0"
+javaTargetVersion = "11"
+kotlinVersion = "1.5.31"
+kotlinApiVersion = "1.5"
+kotlinLangVersion = "1.5"
+slf4jVersion = "1.7.32"
+coroutinesVersion = "1.5.2"
+kotestVersion = "4.6.3"
+
+[libraries]
+slf4 = { module = "org.slf4j:slf4j-simple", version.ref = "slf4jVersion" }
+kotlinScript = {module = "org.jetbrains.kotlin:kotlin-script-runtime", version.ref = "kotlinVersion"}
+kotlinCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm", version.ref = "coroutinesVersion" }
+kotestRunnerJunit = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotestVersion"}
+kotestAssertionsCore = { module = "io.kotest:kotest-assertions-core", version.ref = "kotestVersion" }
+kotestProperty = { module = "io.kotest:kotest-property", version.ref = "kotestVersion" }
+
+[bundles]
+kotest = ["kotestRunnerJunit", "kotestAssertionsCore", "kotestProperty"]
+
+[plugins]
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
+kotlinKapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlinVersion" }
+kotlinSpring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlinVersion" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinVersion" }

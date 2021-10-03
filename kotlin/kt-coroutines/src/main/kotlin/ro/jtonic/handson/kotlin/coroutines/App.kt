@@ -22,7 +22,7 @@ object App {
       // ---
       println("personInfo = $personInfo")
     }
-    assert(latency.inSeconds < 2.1) {
+    assert(latency.inWholeSeconds.toDouble() < 2.1) {
       "The latency of getting the person information should be a bit longer than 2 sec"
     }
     println("latency = $latency")

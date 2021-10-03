@@ -1,6 +1,6 @@
 package ro.jtonic.handson.kotlin.basics.apps
 
-fun main(vararg args: String) {
+fun main(args: Array<String>) {
     val name = if (args.isEmpty()) {
         "Kotlin"
     } else {

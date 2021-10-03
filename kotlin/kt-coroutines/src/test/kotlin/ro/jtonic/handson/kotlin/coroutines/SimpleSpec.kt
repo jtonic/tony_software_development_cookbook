@@ -1,8 +1,8 @@
 package ro.jtonic.handson.kotlin.coroutines
 
-import io.kotlintest.matchers.doubles.shouldBeGreaterThan
-import io.kotlintest.matchers.doubles.shouldBeLessThan
-import io.kotlintest.specs.StringSpec
+import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.comparables.shouldBeLessThan
+import io.kotest.matchers.longs.shouldBeGreaterThanOrEqual
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import ro.jtonic.handson.kotlin.coroutines.UserManagement.getAge
@@ -16,12 +16,12 @@ class SimpleSpec : StringSpec() {
 
   init {
 
-    "coroutines are better tested with kotlintest" {
+    "coroutines are better tested with kotest" {
       val latency = measureTime {
         println("Thread.currentThread() = ${Thread.currentThread()}")
         delay(SECONDS.toMillis(1))
       }
-      latency.inSeconds shouldBeGreaterThan 1L.toDouble()
+      latency.inWholeSeconds shouldBeGreaterThanOrEqual 1L
     }
 
     "should take a bit more that 2 seconds to get user name and age" {
@@ -35,7 +35,7 @@ class SimpleSpec : StringSpec() {
         println("result = $result")
       }
 
-      val latencyInSecs = latency.inSeconds
+      val latencyInSecs = latency.inWholeSeconds.toDouble()
       println("latencyInSecs = $latencyInSecs")
       latencyInSecs shouldBeLessThan 2.1
     }

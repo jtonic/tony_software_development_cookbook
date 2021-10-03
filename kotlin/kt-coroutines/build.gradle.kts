@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+  implementation(rootProject.deps.kotlinCoroutines)
 }
 
 application {

@@ -1,11 +1,13 @@
-pluginManagement {
-  repositories {
-    maven { setUrl("https://dl.bintray.com/kotlin/kotlin-eap") }
-    mavenCentral()
-    maven { setUrl("https://plugins.gradle.org/m2/") }
-    maven { setUrl("https://dl.bintray.com/kotlin/kotlin-eap") }
-  }
-}
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+enableFeaturePreview("VERSION_CATALOGS")
+
 rootProject.name = "kotlin"
-include("kt-basics")
-include("kt-coroutines")
+include("kt-basics", "kt-coroutines")
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("deps") {
+            from(files("gradle/libs.versions.toml"))
+        }
+    }
+}
